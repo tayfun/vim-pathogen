@@ -10,11 +10,13 @@ To use the config files, simply move the whole vim-pathogen directory you got fr
 
     cd ~ && git clone git://github.com/tayfun/vim-pathogen.git .vim
 
+Then, make sure you get the submodules which have their own repositories:
+
+    cd ~/.vim && git submodule init && git submodule update
+
 The last thing to do is creating a symlink for vimrc and gvimrc files. This way when the file is updated via git, it is instantly used:
     
-    cd ~
-    ln -s .vim/.gvimrc
-    ln -s .vim/.vimrc
+    cd ~ && ln -s .vim/.gvimrc && ln -s .vim/.vimrc
 
 That's all! Enjoy your new vim configuration:
 
