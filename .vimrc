@@ -108,3 +108,7 @@ let g:ctrlp_custom_ignore = {
 	\ 'file': '\.exe$\|\.so$\|\.dll$',
 	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 	\ }
+
+" Disables indentation checks where flakes8 want you to start below
+" continuation line from the parenthesis above it.
+let g:syntastic_python_checker_args = "--ignore=E128,E126"
