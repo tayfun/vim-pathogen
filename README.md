@@ -14,7 +14,7 @@ Then, make sure you get the submodules which have their own repositories:
 
     cd ~/.vim && git submodule init && git submodule update
 
-The last thing to do is creating a symlink for vimrc and gvimrc files. This way when the file is updated via git, it is instantly used:
+The last thing to do is creating a symlink for vimrc file. This way when the file is updated via git, it is instantly used:
     
     cd ~ && ln -s .vim/.vimrc
 
@@ -26,7 +26,7 @@ That's all! Enjoy your new vim configuration:
 Some Info
 ---------
 
-I may add explanations to some of the functionality later. For the most part .gvimrc file has comments for all the commands anyway. 
+I may add explanations to some of the functionality later. For the most part .vimrc file has comments for all the commands anyway. 
 
 * One shortcut I like is F7 which is mapped to open nerdtree.
 
