@@ -14,6 +14,10 @@ Then, make sure you get the submodules which have their own repositories:
 
     cd ~/.vim && git submodule init && git submodule update
 
+If you want great python auto-completion provided by jedi, install it via:
+
+    sudo pip install jedi
+
 The last thing to do is creating a symlink for vimrc file. This way when the file is updated via git, it is instantly used:
     
     cd ~ && ln -s .vim/.vimrc
@@ -38,4 +42,6 @@ nerdtree increasingly. Just press Ctrl-P and fuzzy search!
 
 Change List
 -----------
+v0.3: Added font size increase and decrease functions and mappings.
+v0.2: Added jedi-vim and jedi instructions for python auto-completion that just works.  
 v0.1: First commit. 
