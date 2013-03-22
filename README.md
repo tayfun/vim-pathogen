@@ -14,6 +14,11 @@ Then, make sure you get the submodules which have their own repositories:
 
     cd ~/.vim && git submodule init && git submodule update
 
+If you already had installed from this repository you may need to run update again to get new submodules:
+
+    git submodule update --init
+
+
 If you want great python auto-completion provided by jedi, install it via:
 
     sudo pip install jedi
