@@ -58,8 +58,7 @@ set expandtab
 set autoread " read open files again when changed outside Vim
 set browsedir =current " which directory to use for the file browser
 set visualbell " visual bell instead of beeping
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 " highlight current line
 set cursorline
 " Break lines longer than 80. (wrap option only displays it but doesn't insert
