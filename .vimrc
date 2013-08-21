@@ -85,7 +85,9 @@ set foldlevelstart=20
 
 " Removes trailing whitespaces when a file is saved.
 " See: http://vim.wikia.com/wiki/Remove_unwanted_spaces
-autocmd FileType python autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+" Previously this was done only on Python source files, now everywhere.
+" autocmd FileType python autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 " 1. Use gvim's menu to set your desired font.
 " 2. After font is rendered, use "set gfn?" to see its name.
@@ -141,3 +143,11 @@ endfunction
 command! SmallerFont call SmallerFont()
 nmap + : LargerFont<CR>
 nmap - : SmallerFont<CR>
+
+" Remove menu options so that there's more room for text.
+:set guioptions-=m  "remove menu bar
+:set guioptions-=T  "remove toolbar
+:set guioptions-=r  "remove right-hand scroll bar
+
+" Disable automatic folding of vim-markdown from plasticboy
+let g:vim_markdown_folding_disabled=1
