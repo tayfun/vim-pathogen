@@ -35,7 +35,7 @@ syntax on
 " Both are good color schemes.
 " colorscheme darkblue
 colorscheme solarized
-" colorscheme desert 
+" colorscheme desert
 
 set showcmd " Show (partial) command in status line.
 set showmatch " Show matching brackets.
@@ -54,7 +54,7 @@ set tabstop=4
 set shiftwidth=4
 " Use space instead of tabs.
 set expandtab
- 
+
 set autoread " read open files again when changed outside Vim
 set browsedir =current " which directory to use for the file browser
 set visualbell " visual bell instead of beeping
@@ -112,7 +112,8 @@ let g:ctrlp_custom_ignore = {
 
 " Disables indentation checks where flakes8 want you to start below
 " continuation line from the parenthesis above it.
-let g:syntastic_python_checker_args = "--ignore=E128,E126"
+" Never mind, let it use ~/config/flake8
+" let g:syntastic_python_checker_args = "--ignore=E128,E126,"
 
 
 let s:pattern = '^\(.* \)\([1-9][0-9]*\)$'
