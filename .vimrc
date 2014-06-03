@@ -34,8 +34,10 @@ syntax on
 
 " Both are good color schemes.
 " colorscheme darkblue
-colorscheme solarized
+" colorscheme solarized
 " colorscheme desert
+" colorscheme oceanblack
+colorscheme elflord
 
 set showcmd " Show (partial) command in status line.
 set showmatch " Show matching brackets.
@@ -54,6 +56,8 @@ set tabstop=4
 set shiftwidth=4
 " Use space instead of tabs.
 set expandtab
+" insert tabs at the beginning of a line
+set smarttab
 
 set autoread " read open files again when changed outside Vim
 set browsedir =current " which directory to use for the file browser
@@ -152,3 +156,7 @@ nmap - : SmallerFont<CR>
 
 " Disable automatic folding of vim-markdown from plasticboy
 let g:vim_markdown_folding_disabled=1
+
+source ~/.vim/bundle/cyclecolor.vim
+
+:set complete-=i

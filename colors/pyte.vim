@@ -1,0 +1,1 @@
+/home/tsen/.dotfiles/dotfiles/.vim/colors/pyte.vim
