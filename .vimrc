@@ -48,7 +48,10 @@ set autowrite " Automatically save before commands like :next and :make
 " Hiding buffers just clutters my environment. Delete them when I don't need
 " them.
 " set hidden " Hide buffers when they are abandoned
-set mouse=a " Enable mouse usage (all modes) in terminals
+" Disable mouse support because I can't copy from terminal when it is enabled.
+" Note that you can also use Screen to detach from Vim with mouse support
+" using Ctrl-[ and then select and copy the text.
+" set mouse=a " Enable mouse usage (all modes) in terminals
 
 " Number of spaces a tab should be.
 set tabstop=4
@@ -76,8 +79,8 @@ set wrap linebreak textwidth=0
 " Highlight searched words
 set hlsearch
 
-" <Ctrl-b> redraws the screen and removes any search highlighting.
-nnoremap <silent> <C-b> :nohl<CR><C-l>
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 " Stop vim continuing comments.
 set formatoptions-=ql
@@ -160,3 +163,9 @@ let g:vim_markdown_folding_disabled=1
 source ~/.vim/bundle/cyclecolor.vim
 
 :set complete-=i
+
+" associate *.comp with html filetype
+au BufRead,BufNewFile *.comp set ft=mason
+au BufRead,BufNewFile *.html set ft=mason
+
+autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
