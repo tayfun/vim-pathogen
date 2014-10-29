@@ -168,4 +168,8 @@ source ~/.vim/bundle/cyclecolor.vim
 au BufRead,BufNewFile *.comp set ft=mason
 au BufRead,BufNewFile *.html set ft=mason
 
+" set tmux window title when a file is opened
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
+
+" Start on new line (not where we left off) when editing a git commit message
+autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
