@@ -34,10 +34,10 @@ syntax on
 
 " Both are good color schemes.
 " colorscheme darkblue
-" colorscheme solarized
+colorscheme solarized
 " colorscheme desert
 " colorscheme oceanblack
-colorscheme elflord
+" colorscheme elflord
 
 set showcmd " Show (partial) command in status line.
 set showmatch " Show matching brackets.
@@ -173,3 +173,9 @@ autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " 
 
 " Start on new line (not where we left off) when editing a git commit message
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
+
+" YouCompleteMe definitions
+let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_autoclose_preview_window_after_insertion = 0
+" \jd jumps to definition.
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
