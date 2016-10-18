@@ -49,3 +49,9 @@
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "bundle/riv.vim"]
+	path = bundle/riv.vim
+	url = https://github.com/Rykka/riv.vim.git
+[submodule "bundle/csv.vim"]
+	path = bundle/csv.vim
+	url = git@github.com:chrisbra/csv.vim.git
