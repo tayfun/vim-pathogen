@@ -70,7 +70,7 @@ filetype plugin indent on
 set cursorline
 " Break lines longer than 80. (wrap option only displays it but doesn't insert
 " breaks. textwidth option does the insertion automatically).
-" set textwidth=80
+set textwidth=80
 " Changed my mind, wrap long lines but do not insert breaks.
 " linebreak prevents breaking at the middle of a word, textwidth disables the
 " maximum line length setting.
@@ -93,7 +93,9 @@ set foldlevelstart=20
 " Removes trailing whitespaces when a file is saved.
 " See: http://vim.wikia.com/wiki/Remove_unwanted_spaces
 " Previously this was done only on Python source files, now everywhere.
-" autocmd FileType python autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+" Note sure why but I have to add python here otherwise it does works only
+" for the first opened file in a window.
+autocmd FileType python autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 " 1. Use gvim's menu to set your desired font.
@@ -179,3 +181,49 @@ let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 0
 " \jd jumps to definition.
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
+let g:solarized_contrast="high"
+
+" Stop pretending that vim packages have ruler set and actually set it.
+" Note that Mac doesn't have this by default so it is mandatory there.
+set ruler
+
+" So that Shift-Click on a word searches forward.
+set mousemodel=extend
+set guifont=Menlo\ Regular:h17
+" map <c-f> :call JsBeautify()<cr>
+" Or better yet, use jq :)
+map <c-f> :%!jq '.'<cr>
+" or
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType json setlocal shiftwidth=2 tabstop=2
+" for html
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
+" We want to use rstcheck for rst files.
+let g:syntastic_rst_checkers = ['rstcheck']
+let g:syntastic_python_checkers = ['flake8']
+" Switched to using pylint
+" let g:syntastic_python_checkers = ['pylint']
+
+" For displaying Japanese files.
+set fileencodings=ucs-bom,utf-8,sjis,default
+
+" Make ctrlp ignore some directories.
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|cache)$',
+    \ }
+" Use ag instead of vim's own search ie. globpath().
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+" Do not scan dotfiles and dotdirs.
+let g:ctrlp_dotfiles = 1
+
+" We don't want any quote characters to be matched. Causes problems in
+" docstrings and other places.
+let delimitMate_quotes = ""
