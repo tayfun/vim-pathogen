@@ -40,15 +40,9 @@
 [submodule "bundle/gundo.vim"]
 	path = bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim.git
-[submodule "bundle/vim-jsbeautify"]
-	path = bundle/vim-jsbeautify
-	url = https://github.com/maksimr/vim-jsbeautify.git
 [submodule "bundle/Dockerfile.vim"]
 	path = bundle/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "bundle/riv.vim"]
 	path = bundle/riv.vim
 	url = https://github.com/Rykka/riv.vim.git
